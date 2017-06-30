@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 
 class GoogleMap extends Component {
+    shouldComponentUpdate() {
+        return false;
+    }
+
     componentDidMount() {
         //create embedded google map
         new google.maps.Map(this.refs.map, {
@@ -13,7 +17,7 @@ class GoogleMap extends Component {
     }
 
     render() {
-        //this.refs.map
+        //this.refs.map reference to the dom
         return <div ref="map" />
     }
 }
